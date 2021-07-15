@@ -1,3 +1,5 @@
+package boj._10828;
+
 import java.util.Scanner;
 
 /*
@@ -41,7 +43,7 @@ class Stack{
 	
 }
 
-public class BOJ_10828 {
+public class Main {
 		
 	public static void main(String[] args) {
 		
@@ -83,3 +85,4 @@ public class BOJ_10828 {
 		scan.close();
 	}
 }
+
