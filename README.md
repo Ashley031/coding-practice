@@ -1,4 +1,4 @@
-# coding-practice_JAVA
+# coding-practice_JAVA & C++
 
 > 기본 자료구조 구현과 그에 대한 활용문제를 풀면서 익히기
 
