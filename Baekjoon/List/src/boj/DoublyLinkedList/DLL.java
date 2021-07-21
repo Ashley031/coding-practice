@@ -156,6 +156,30 @@ class MyLinkedList{
 		return oldElement;
 	}
 	
+	public Object removeAfter(Node p) {
+		if(this.size == 0) return -1;
+		
+		Object oldElement = p.getNext().getElement();
+		
+		p.getNext().getNext().setPrev(p);
+		p.setNext(p.getNext().getNext());
+		
+		this.size--;
+		return oldElement;
+	}
+	
+	public Object removeBefore(Node p) {
+		if(this.size == 0) return -1;
+		
+		Object oldElement = p.getPrev().getElement();
+		
+		p.getPrev().getPrev().setNext(p);
+		p.setPrev(p.getPrev().getPrev());
+		
+		this.size--;
+		return oldElement;
+	}
+	
 	public void printAll() {
 		Node cur = this.header.getNext();
 		System.out.println("===== print start =====");
@@ -189,6 +213,10 @@ public class DLL {
 		System.out.println("Remove First : " + list.removeFirst());
 		list.printAll();
 		System.out.println("Remove Last : " + list.removeLast());
+		list.printAll();
+		System.out.println("Remove after aa header : " + list.removeAfter(list.header.getNext().getNext()));
+		list.printAll();
+		System.out.println("Remove before bb trailer : " + list.removeBefore(list.trailer.getPrev().getPrev()));
 		list.printAll();
 		System.out.println("List Size : " + list.size());
 		System.out.println("Is List Empty? : " + list.isEmpty());
