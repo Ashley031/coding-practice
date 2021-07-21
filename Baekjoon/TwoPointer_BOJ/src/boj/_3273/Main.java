@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
  * Two Pointer
  * 백준 3273번 풀이
  * 
- * Coded by NANAEU	(2021.07.15)
+ * Coded by NANAEU	(2021.07.22)
  */
 
 public class Main {
