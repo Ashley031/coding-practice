@@ -2,7 +2,7 @@ package boj.DoublyLinkedList;
 
 
 /*
- * Doubly Linked List ±¸Çö
+ * Doubly Linked List
  * 
  * Coded by NANAEU	(2021.07.22)
  */
