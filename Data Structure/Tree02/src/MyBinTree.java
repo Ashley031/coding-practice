@@ -154,7 +154,7 @@ public class MyBinTree extends MyTree {
     public MyBinNode insertRight(MyBinNode v, Object e){
         MyBinNode newRight = null;
 
-        if(!this.hasLeft(v)){
+        if(!this.hasRight(v)){
             newRight = (MyBinNode) super.setChild(v, 1, e);
             newRight.children().add(null);
             newRight.children().add(null);
@@ -226,9 +226,31 @@ public class MyBinTree extends MyTree {
         }
     }
 
-//    public int postOrder(MyBinNode v) {
-//        if(this.hasLeft(v)){
-//            postOrder(v);
-//        }
-//    }
+    public int postOrder(MyBinNode v) {
+        if(this.isExternal(v))
+            return Integer.parseInt((v.element().toString()));
+        else{
+            int x = postOrder(v.left());
+            int y = postOrder(v.right());
+
+            int return_val = 0;
+
+            switch(v.element().toString()){
+                case "+":
+                    return_val = x + y;
+                    break;
+                case "-":
+                    return_val = x - y;
+                    break;
+                case "*":
+                    return_val = x * y;
+                    break;
+                case "X":
+                    return_val = x * y;
+                    break;
+            }
+
+            return return_val;
+        }
+    }
 }

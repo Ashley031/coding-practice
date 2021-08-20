@@ -1,36 +1,32 @@
 public class Main {
-    public static void main(String[] args) {
-           MyBinTree math = new MyBinTree();
+       public static void main(String[] args) {
+              MyBinTree math = new MyBinTree('+');
+              math.addNode('*');
+              math.addNode('*');
 
-           MyBinNode root = math.addRoot('+');
-           System.out.println("root" + root.element());
+              math.insertLeft(math.root().left(), 2);
+              math.insertRight(math.root().left(), '-');
+              math.insertLeft(math.root().left().right(), 3);
+              math.insertRight(math.root().left().right(), 1);
+              math.insertLeft(math.root().right(), 3);
+              math.insertRight(math.root().right(), 2);
 
-           math.addNode('*');
-           math.addNode('*');
+//              System.out.println(math.root().element());
+//              System.out.println(math.root().left().element());
+//              System.out.println(math.root().right().element());
+//              System.out.println(math.root().left().left().element());
+//              System.out.println(math.root().left().right().element());
+//              System.out.println(math.root().right().left().element());
+//              System.out.println(math.root().right().right().element());
+//              System.out.println(math.root().left().right().left().element());
+//              System.out.println(math.root().left().right().right().element());
+//
+//              .
+//              System.out.println(math.root().right().right().left().element());
+//              System.out.println(math.root().right().right().right().element());
 
-           System.out.println("level 1-1");
-
-           math.insertLeft(math.root().left(), 2);
-           math.insertRight(math.root().left(), '-');
-
-           System.out.println("level 2-1");
-
-           math.insertLeft(math.root().right(), 3);
-           math.insertRight(math.root().right(), 2);
-
-           System.out.println("level 2-2");
-
-           System.out.println(math.root().left().right());
-
-           math.insertLeft(math.root().left().right(), 3);
-           math.insertRight(math.root().left().right(), 1);
-
-           System.out.println("level 3");
-
-           math.inOrder(math.root());
-
-//           System.out.println(math.postOrder(math.root()));
-
-
-    }
+              math.inOrder(math.root());
+              System.out.print("=");
+              System.out.println(math.postOrder(math.root()));
+       }
 }
