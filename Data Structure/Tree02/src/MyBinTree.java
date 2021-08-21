@@ -89,7 +89,7 @@ public class MyBinTree extends MyTree {
 
         // Case 1 : Left, Right exist
         if(this.hasLeft((MyBinNode) super.root()) && this.hasRight((MyBinNode) super.root())){
-            System.out.println("Case 1: Cannot add more than 2 Child - Already FULL");
+            System.out.println("Case 1 : Cannot add more than 2 Child - Already FULL");
         }
         // Case 2 : Only Left exists
         else if(this.hasLeft((MyBinNode) super.root())) {
@@ -131,7 +131,7 @@ public class MyBinTree extends MyTree {
             newNode.children().add(null);
             newNode.children().add(null);
 
-            super.root().children().add(newNode);
+            super.root().children().add(null);
 
             return_node = newNode;
         }
@@ -227,30 +227,32 @@ public class MyBinTree extends MyTree {
     }
 
     public int postOrder(MyBinNode v) {
-        if(this.isExternal(v))
-            return Integer.parseInt((v.element().toString()));
-        else{
+
+        int result = 0;
+
+        if(isExternal(v)){
+            return Integer.parseInt(v.element().toString());
+        }
+        else {
             int x = postOrder(v.left());
             int y = postOrder(v.right());
 
-            int return_val = 0;
-
             switch(v.element().toString()){
                 case "+":
-                    return_val = x + y;
+                    result = x + y;
                     break;
                 case "-":
-                    return_val = x - y;
+                    result = x - y;
                     break;
                 case "*":
-                    return_val = x * y;
+                    result = x * y;
                     break;
                 case "X":
-                    return_val = x * y;
+                    result = x * y;
                     break;
             }
-
-            return return_val;
+            return result;
         }
+
     }
 }
