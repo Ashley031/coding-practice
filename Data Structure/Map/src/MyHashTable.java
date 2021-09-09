@@ -41,22 +41,22 @@ public class MyHashTable {
     private void rehash(int capacity){
         ArrayList oldList = this.bucketArray;
 
-        this.bucketArray = new ArrayList();
         this.bucketCapacity = capacity;
-        for(int i=0 ; i<capacity ; i++){
-            this.bucketArray.add(null);
-        }
+        this.bucketArray = new ArrayList();
         this.totalSize = 0;
+        for(int i=0 ; i<capacity ; i++)
+            this.bucketArray.add(null);
 
         for(int i=0 ; i<oldList.size() ; i++){
-            ArrayList temp = (ArrayList) oldList.get(i);
-            if(temp != null){
-                for(int j=0 ; j<temp.size() ; j++){
-                    StudentInfo tempStudent = (StudentInfo) temp.get(j);
+            ArrayList tempList = (ArrayList) oldList.get(i);
+            if(tempList != null){
+                for(int j=0 ; j< tempList.size() ; j++){
+                    StudentInfo tempStudent = (StudentInfo) tempList.get(j);
                     this.put(tempStudent.getStudentID(), tempStudent.getStudentName());
                 }
             }
         }
+
     }
     public float getLoadFactor() {
         return (float)totalSize / (float)bucketCapacity;
@@ -66,58 +66,61 @@ public class MyHashTable {
     public String get(String k) {
         int key = this.hashFunc(k);
         String result = null;
-        ArrayList temp = (ArrayList) this.bucketArray.get(key);
 
-        if(temp == null)
-            System.out.println("this key is empty!");
+        ArrayList tempList = (ArrayList) this.bucketArray.get(key);
+
+        if(tempList == null)
+            System.out.println("this key is empty...");
         else{
-            for(int i=0 ; i<temp.size() ; i++){
-                StudentInfo student = (StudentInfo) temp.get(i);
+            for(int i=0 ; i<tempList.size() ; i++){
+                StudentInfo student = (StudentInfo) tempList.get(i);
                 if(k.equals(student.getStudentID()))
                     result = student.getStudentName();
             }
         }
 
         return result;
+
     }
     public String put(String k, String v) {
 
-        if(this.getLoadFactor() > this.loadFactor)
+        if(this.loadFactor < this.getLoadFactor())
             this.rehash(this.bucketCapacity*2);
 
         StudentInfo newStudent = new StudentInfo(k, v);
         int key = this.hashFunc(k);
-
-        ArrayList temp = (ArrayList) this.bucketArray.get(key);
+        ArrayList tempList = (ArrayList) this.bucketArray.get(key);
 
         this.totalSize++;
 
-        if(temp == null) {
+        if(tempList == null){
             ArrayList newList = new ArrayList();
             newList.add(newStudent);
             this.bucketArray.set(key, newList);
             return null;
         }
         else{
-            temp.add(newStudent);
-            StudentInfo tempStudent = (StudentInfo) temp.get(0);
-            return tempStudent.getStudentName();
+            StudentInfo temp = (StudentInfo) tempList.get(tempList.size()-1);
+            tempList.add(newStudent);
+            return temp.getStudentName();
         }
+
     }
     public String remove(String k){
         int key = this.hashFunc(k);
         String result = null;
-        ArrayList temp = (ArrayList) this.bucketArray.get(key);
 
-        if(temp == null)
-            System.out.println("this key is empty!");
+        ArrayList tempList = (ArrayList) this.bucketArray.get(key);
+
+        if(tempList == null)
+            System.out.println("this key is empty...");
         else{
-            for(int i=0 ; i<temp.size() ; i++){
-                StudentInfo student = (StudentInfo) temp.get(i);
+            for(int i=0 ; i<tempList.size() ; i++){
+                StudentInfo student = (StudentInfo) tempList.get(i);
                 if(k.equals(student.getStudentID())) {
                     result = student.getStudentName();
-                    temp.remove(i);
                     this.totalSize--;
+                    tempList.remove(i);
                 }
             }
         }
