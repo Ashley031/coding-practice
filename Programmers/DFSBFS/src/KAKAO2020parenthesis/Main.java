@@ -1,4 +1,4 @@
-package PRG_2020KAKAO;
+package KAKAO2020parenthesis;
 
 import java.io.BufferedReader;
 import java.io.IOException;
