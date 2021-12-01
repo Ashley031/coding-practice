@@ -68,9 +68,8 @@ public class Main {
 //            System.out.println(graph[num].get(i) + ": 방문여부 = " + visited[graph[num].get(i)]);
 //        System.out.println("==============");
 
-        int idx = 0;
         for(int node : graph[num]){
-            if(visited[graph[num].get(idx++)] < 1)
+            if(visited[node] < 1)
                 dfs(node);
         }
 
