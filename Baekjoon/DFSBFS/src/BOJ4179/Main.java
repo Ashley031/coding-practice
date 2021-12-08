@@ -7,6 +7,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
+/*
+* 참고: https://data-make.tistory.com/509
+* */
+
 class Loc {
     int x;
     int y;
