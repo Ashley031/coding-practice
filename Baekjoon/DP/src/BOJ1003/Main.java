@@ -2,7 +2,6 @@ package BOJ1003;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Vector;
 
 /*
 * Bottom-up 방식으로 풀이
