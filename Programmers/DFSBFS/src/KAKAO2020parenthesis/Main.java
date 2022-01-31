@@ -1,4 +1,4 @@
-package KAKAO2020parenthesis;
+package Programmers.DFSBFS.src.KAKAO2020parenthesis;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,6 +1,8 @@
+package Programmers.Problem_05;
+
 import java.util.*;
 
-public class Problem_05 {
+public class pro_기능개발 {
 	
 	public static int[] solution(int[] progresses, int[] speeds) {
 		Stack<Integer> day = new Stack<Integer>();
