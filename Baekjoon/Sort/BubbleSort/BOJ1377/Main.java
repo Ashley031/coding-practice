@@ -1,4 +1,4 @@
-package BOJ1377;
+package Baekjoon.Sort.BubbleSort.BOJ1377;
 
 import java.io.*;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package BOJ1967;
+package Baekjoon.Tree.BOJ1967;
 
 /*
 * Tree - application problem

@@ -1,4 +1,4 @@
-package BOJ17129;
+package Baekjoon.Dictionary.BOJ17219;
 
 import java.io.*;
 import java.util.HashMap;

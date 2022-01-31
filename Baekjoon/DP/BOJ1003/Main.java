@@ -1,4 +1,4 @@
-package BOJ1003;
+package Baekjoon.DP.BOJ1003;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

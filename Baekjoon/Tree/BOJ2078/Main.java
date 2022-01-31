@@ -1,4 +1,4 @@
-package BOJ2078;
+package Baekjoon.Tree.BOJ2078;
 
 import java.io.*;
 import java.util.StringTokenizer;

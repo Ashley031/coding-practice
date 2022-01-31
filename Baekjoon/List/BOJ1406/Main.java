@@ -1,4 +1,4 @@
-package BOJ1406;
+package Baekjoon.List.BOJ1406;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

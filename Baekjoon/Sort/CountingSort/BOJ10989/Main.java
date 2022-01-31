@@ -1,4 +1,4 @@
-package BOJ10989;
+package Baekjoon.Sort.CountingSort.BOJ10989;
 
 import java.io.*;
 

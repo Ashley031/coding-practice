@@ -1,4 +1,4 @@
-package BOJ5464;
+package Baekjoon.Queue.BOJ5464;
 
 import java.io.BufferedReader;
 import java.io.IOException;

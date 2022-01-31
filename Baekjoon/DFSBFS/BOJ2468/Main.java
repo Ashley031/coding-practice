@@ -1,4 +1,4 @@
-package BOJ2468;
+package Baekjoon.DFSBFS.BOJ2468;
 
 import java.io.BufferedReader;
 import java.io.IOException;

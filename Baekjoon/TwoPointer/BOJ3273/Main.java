@@ -1,4 +1,4 @@
-package BOJ3273;
+package Baekjoon.TwoPointer.BOJ3273;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package BOJ18258;
+package Baekjoon.Queue.BOJ18258;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

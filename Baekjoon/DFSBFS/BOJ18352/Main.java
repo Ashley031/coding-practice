@@ -1,4 +1,4 @@
-package BOJ18352;
+package Baekjoon.DFSBFS.BOJ18352;
 
 import java.io.*;
 import java.util.*;
