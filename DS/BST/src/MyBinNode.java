@@ -1,3 +1,5 @@
+package DS.BST.src;
+
 public class MyBinNode extends MyNode {
 	
 	// 0 : left, 1 : right
