@@ -71,6 +71,7 @@ public class Main {
         if(aGroup == bGroup)
             return;
 
+        // a의 부모를 b의 부모로 삼음
         weightDiff[bGroup] = weightDiff[a] - weightDiff[b] + diff;  // 관계 잘 생각하기
         group[bGroup] = aGroup;
     }
