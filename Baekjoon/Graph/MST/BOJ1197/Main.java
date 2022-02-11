@@ -45,6 +45,7 @@ public class Main {
         }
 
         // 간선에 대한 정보 -> 간선리스트로 만들자. 크루스칼 알고리즘인듯
+        // 간선의 가중치가 음수라도 상관없다.
         int a,b,c;
         for(int i=1 ; i<=E ; i++) {
             st = new StringTokenizer(br.readLine());
